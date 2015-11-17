@@ -9,7 +9,7 @@ $app = new \Slim\Slim();
 
 $app->get('/guests', function() use ( $app ) {
     
-    $guests = GuestListService::guestList();
+    $guests = guestListService::guestList();
    $app->response()->header('Content-Type','application/json');
     echo json_encode($guests);
 
@@ -48,9 +48,7 @@ $app->put('/guests/:id', function($id) use ( $app ) {
     echo $app->request()->getBody();
 });
 
-$app->delete('/guests/:id', function($id) use ( $app ) {
-    echo $id;
-});
+
 
 $app->run();
 
