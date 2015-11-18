@@ -41,14 +41,5 @@ class guestListService {
         return false;
     }
     
-    public static function delete($id) {
-        $db = ConnectionFactory::getDB();
-        $guest = $db->guests[$id];
-        if($guest) {
-            $guest->delete();
-            return true;
-        }
-        return false;
-    }
 }
 ?>
